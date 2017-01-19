@@ -1,0 +1,47 @@
+<div class="row bottom-0" style="margin:10px;height:100%">
+	<div class="col s12">
+		<div class="title-top"><img src="{{marca.logo}}" style="height:50px">{{marca.marca}}</div>
+	</div>
+	<div class="col s12 consumo">
+		<div class="row bottom-0">
+			<div class="col s12">
+				<div class="subtitle-top">Menor Consumo por Motor</div>
+			</div>
+		</div>
+		<div class="row bottom-0" style="overflow-x: scroll;margin:0">
+			<div class="col s12">
+				<div class="row bottom-0" style="width:180%;">
+					<div class="col s3 m1" ng-repeat="modelo in marca.modelos">
+						<div class="card">
+							<div class="motor">{{modelo.motora}}</div>
+							<div class="details">
+								<a href="carro/{{modelo.modelo}}"><span style="font-size:12pt;color:black"><b>{{modelo.modelo}}</b></span><br></a>
+								Cidade: {{modelo.kmlgasolinacidade}}km/l
+								Estrada: {{modelo.kmlgasolinaestrada}}km/l
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="col s12 marca">
+		<div class="row bottom-0" style="margin:0px;">
+			<div class="col s12">
+				<div class="subtitle-top">Carros</div>
+			</div>
+			<div class="input-field col s12">
+		    	<input placeholder="buscar" ng-model="search" type="text">
+		    </div>
+		    <div class="col s12" style="overflow-y: scroll;height:300px">
+				<ul class="collection">
+				    <a ng-if="fmodelos.length" ng-repeat="modelo in fmodelos = (modelos | filter:search)" href="carro/{{modelo.modelo}}" class="collection-item">
+						<h6><b>{{modelo.modelo}}</b></h6>
+						<h6>Maior Consumo: {{modelo.maiorconsumo}}Km/l<br>Menor Consumo: {{modelo.menorconsumo}}Km/l</h6>
+				    </a>
+				</ul>
+			</div>
+			<div class="col s12" ng-if="!fmodelos.length"><div class="subtitle-top">Nenhum Resultado</div></div>
+		</div>
+	</div>
+</div>

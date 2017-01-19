@@ -1,0 +1,92 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html ng-app="enchetanque">
+<head>
+	<!-- <base href="/"> -->
+	<base href="/meucombustivel/">
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Enche o Tanque</title>
+	<link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon"/>
+	<link rel="stylesheet" type="text/css" href="css/materialize.css"/>
+	<link rel="stylesheet" type="text/css" href="css/fonts.css">
+	<link rel="stylesheet" type="text/css" href="css/style.css"/>
+	<link rel="stylesheet" href="css/font-awesome.min.css">
+</head>
+<body ng-controller="MainCtrl">
+	<span style="position:fixed;top:50%;left:50%;z-index:100000000000000000;font-size:5pt" us-spinner="{radius:20, speed:1.8, width:8, length: 15,color:'#E65100',opacity:0,scale:1.00,lines:13}">Carregando</span>
+	<nav class="orange navenche">
+	    <div class="nav-wrapper">
+	      <a href="#!" class="brand-logo"><img src="img/logo.png" height="45px" style="margin-top:5px"></a>
+	      <a href="#" data-activates="mobile-demo" class="button-collapse" style="margin-left:15px;margin-top:10px;font-size:25pt;"><span class="fa fa-bars" aria-hidden="true" ></span></a>
+	      <ul class="side-nav" id="mobile-demo">
+	        <li><a href="/"><span class="fa fa-map"></span>&emsp;Mapa</a></li>
+	        <li><a href="ranking"><span class="fa fa-trophy"></span>&emsp;Ranking</a></li>
+	        <li><a href="estados"><span class="fa fa-globe"></span>&emsp;Estados</a></li>
+	        <li><a href="cidades"><span class="fa fa-map-marker"></span>&emsp;Cidades</a></li>
+	        <li><a href="bandeiras"><span class="fa fa-flag"></span>&emsp;Bandeiras</a></li>
+	        <li><a href="carros"><span class="fa fa-car"></span>&emsp;Carros</a></li>
+	        <li><a href="marcas"><span class="fa fa-road"></span>&emsp;Marcas</a></li>
+	        <li><a href="combustiveis"><span class="fa fa-fire"></span>&emsp;Combustíveis</a></li>
+	        <li><a href="sobre"><span class="fa fa-info-circle"></span>&emsp;Sobre</a></li>
+	      </ul>
+	    </div>
+	</nav>
+	<div class="container">
+		<div class="row" style="margin:0px;height:100%;">
+			<div class="col s1 m1 l2 left orange">
+				<img src="img/logo.png">
+				<div class="collection">
+					<a ng-hide="true" ng-click="login()" class="collection-item"><span class="fa fa-user"></span><span class="nome">Login</span></a>
+			        <a href="/" class="collection-item"><span class="fa fa-map"></span><span class="nome">Mapa</span></a>
+			        <a href="ranking" class="collection-item"><span class="fa fa-trophy"></span><span class="nome">Ranking</span></a>
+			        <a href="estados" class="collection-item"><span class="fa fa-globe"></span><span class="nome">Por Estado</span></a>
+			        <a href="cidades" class="collection-item"><span class="fa fa-map-marker"></span><span class="nome">Por Cidade</span></a>
+			        <a href="bandeiras" class="collection-item"><span class="fa fa-flag"></span><span class="nome">Bandeiras</span></a>
+			        <a href="carros" class="collection-item"><span class="fa fa-car"></span><span class="nome">Carros</span></a>
+			        <a href="marcas" class="collection-item"><span class="fa fa-road"></span><span class="nome">Marcas</span></a>
+			        <a href="combustiveis" class="collection-item"><span class="fa fa-fire"></span><span class="nome">Combustíveis</span></a>
+			        <a href="sobre" class="collection-item"><span class="fa fa-info-circle"></span><span class="nome">Sobre</span></a>
+			    </div>
+			</div>
+			<div class="col s12 m11 l10 right" scroll-to-top-before-animation>	
+				<div ng-view autoscroll="true" style="width:100%;height:100%"></div>
+			</div>
+		</div>
+	</div>
+	<!-- <img src="img/logo_universe.png" class="logo-universe"> -->
+	<script async src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBQm1nsi2tH0gVRNRkVd91YfpbrPdbBYIg"
+    ></script>
+</body>
+	<script src="js/jquery.min.js"></script>
+	<script src="js/angular.min.js"></script>
+	<script src="js/angular-locale_pt-br.js"></script>
+	<script src="js/angular-route.min.js"></script>
+	<script src="js/angular-sanitize.min.js"></script>
+	<script src="js/ngStorage.min.js"></script>
+	<script src="js/spin.min.js"></script>
+	<script src="js/angular-spinner.min.js"></script>
+	<script src="js/angular-loading-spinner.js"></script>
+	<script src="js/materialize.min.js"></script>
+	<script src="js/angular-easyfb.js"></script>
+
+	<script src="js/config/apps.js"></script>
+	<script src="js/config/routes.js"></script>
+	<script src="js/config/varGlobal.js"></script>
+
+	<script src="js/controller/homeCtrl.js"></script>
+	<script src="js/controller/estadosCtrl.js"></script>
+	<script src="js/controller/estadoCtrl.js"></script>
+	<script src="js/controller/cidadesCtrl.js"></script>
+	<script src="js/controller/bandeirasCtrl.js"></script>
+	<script src="js/controller/bandeiraCtrl.js"></script>
+	<script src="js/controller/marcasCtrl.js"></script>
+	<script src="js/controller/marcaCtrl.js"></script>
+	<script src="js/controller/cidadeCtrl.js"></script>
+	<script src="js/controller/carrosCtrl.js"></script>
+	<script src="js/controller/combustiveisCtrl.js"></script>
+	<script src="js/controller/postoCtrl.js"></script>
+	<script src="js/controller/mainCtrl.js"></script>
+	<script src="js/controller/sobreCtrl.js"></script>
+	<script src="js/controller/carroCtrl.js"></script>
+	<script src="js/controller/rankingCtrl.js"></script>
+</html>

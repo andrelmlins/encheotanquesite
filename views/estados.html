@@ -1,0 +1,27 @@
+<div class="row bottom-0" style="margin:10px">
+	<div class="col s12">
+		<div class="title-top">Estados</div>
+	</div>
+	<div class="input-field col s12">
+      <input placeholder="buscar" ng-model="search" type="text">
+    </div>
+    <div class="col s12">
+	    <div class="row bottom-0" ng-repeat="t in estadost">
+			<div class="col s6 m3" style="margin-bottom:10px" ng-if="festados.length" ng-repeat="estado in festados = (estados.slice(t*4,(t*4)+4) | filter:search)">
+			  <div class="card">
+			    <div class="card-image">
+			      <img src="{{estado.bandeira}}">
+			      <span class="card-title textshadow">{{estado.estado}}</span>
+			    </div>
+			    <div class="card-content">
+			      <p>Preço da Gasolina: R$ {{estado.precocombustivel}}</p>
+			    </div>
+			    <div class="card-action">
+			      <a href="estado/{{estado.estadoabrev}}">Saiba Mais</a>
+			    </div>
+			  </div>
+			</div>
+		</div>
+	</div>
+	<div class="col s12" ng-if="!festados.length"><div class="subtitle-top">Nenhum Resultado</div></div>
+</div>

@@ -1,0 +1,19 @@
+<div class="row bottom-0" style="margin:10px">
+	<div class="col s12">
+		<div class="title-top">Marcas</div>
+	</div>
+	<div class="input-field col s12">
+      <input placeholder="buscar" ng-model="search" type="text">
+    </div>
+	<div class="col s6 m2" ng-if="fmarcas.length" ng-repeat="marca in fmarcas = (marcas | filter:search)">
+	  <div class="card">
+	    <div class="card-image">
+	      <a href="marca/{{marca.marca}}"><img src="{{marca.logo}}"></a>
+	    </div>
+	    <div class="card-content">
+	      	<p>{{marca.marca}}<br>{{marca.quantidade}} modelos</p>
+	    </div>
+	  </div>
+	</div>
+	<div class="col s12" ng-if="!fmarcas.length"><div class="subtitle-top">Nenhum Resultado</div></div>
+</div>

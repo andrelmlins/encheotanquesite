@@ -1,0 +1,20 @@
+<div id="mapa"></div>
+<div class="fixed-action-btn" style="top: 0px; right: 24px;">
+    <a class="btn-floating btn-large indigo" ng-click="refresh()">
+    	<i class="fa fa-refresh"></i>
+    </a>
+</div>
+<div class="searchmap">
+	<input placeholder="destino" type="text" ng-model="destino">
+	<button class="btn orange" ng-click="localizacao(destino)"><i class="fa fa-share"></i></button>
+</div>
+
+<div id="posto" class="modal modal-fixed-footer">
+	<div class="modal-content">
+		<h4>{{postoatual.razao}}</h4>
+		<p>{{postoatual}}</p>
+	</div>
+	<div class="modal-footer">
+		<a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat ">Localizar</a>
+	</div>
+</div>

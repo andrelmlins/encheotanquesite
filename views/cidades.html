@@ -1,0 +1,19 @@
+<div class="row bottom-0" style="margin:10px">
+	<div class="col s12">
+		<div class="title-top">Cidades</div>
+	</div>
+	<div class="input-field col s12">
+      <input placeholder="buscar" ng-model="search" type="text">
+    </div>
+    <div class="col s12 cidades">
+	    <ul class="collection">
+		    <li class="collection-item avatar" ng-if="fcidades.length" ng-repeat="cidade in fcidades = (cidades | filter:search)">
+				<img src="{{cidade.bandeira}}" height="50px" class="circle">
+				<span class="title">{{cidade.cidade}} - {{cidade.estadoabrev}}</span>
+				<p>Preço Médio da Gasolina: R$ {{cidade.precocombustivel}}</p>
+				<a href="cidade/{{cidade.estadoabrev}}/{{cidade.cidade}}" class="secondary-content orange-text">mais</a>
+		    </li>
+		</ul>
+	</div>
+	<div class="col s12" ng-if="!fcidades.length"><div class="subtitle-top">Nenhum Resultado</div></div>
+</div>

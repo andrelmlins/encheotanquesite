@@ -1,0 +1,17 @@
+<div class="row bottom-0" style="margin:10px">
+	<div class="col s12">
+		<div class="title-top">Bandeiras</div>
+	</div>
+	<div class="input-field col s12">
+      <input placeholder="buscar" ng-model="search" type="text">
+    </div>
+	<div class="col s4 m2" ng-if="fbandeiras.length" ng-repeat="bandeira in fbandeiras = (bandeiras | filter:search)">
+	  <div class="card">
+	    <div class="card-image">
+	      <a ng-if="bandeira.logo" href="bandeira/{{bandeira.bandeira}}"><img src="{{bandeira.logo}}"></a>
+	      <a ng-if="!bandeira.logo" href="bandeira/{{bandeira.bandeira}}"><img src="img/semimagem.png"></a>
+	    </div>
+	  </div>
+	</div>
+	<div class="col s12" ng-if="!fbandeiras.length"><div class="subtitle-top">Nenhum Resultado</div></div>
+</div>

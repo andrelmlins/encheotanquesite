@@ -1,0 +1,19 @@
+<div class="row bottom-0" style="margin:10px;height:100%">
+	<div class="col s12">
+		<div class="title-top">Carros</div>
+	</div>
+	<div class="input-field col s12">
+      <input placeholder="buscar" ng-model="search" type="text">
+    </div>
+    <div class="col s12">
+	    <div class="collection carros">
+		    <a href="carro/{{carro.modelo}}" ng-repeat="carro in fcarros = (carros | filter:search)" class="collection-item" ng-if="fcarros.length">
+		    	<span class="fa fa-car circle"></span>
+			    <span class="title">{{carro.modelo}} - {{carro.marca}}</span>
+			    <p>Consumo varia entre {{carro.maiorconsumo}}km/l e {{carro.menorconsumo}}km/l
+			    </p>
+		    </a>
+	  	</div>
+  	</div>
+  	<div class="col s12" ng-if="!fcarros.length"><div class="subtitle-top">Nenhum Resultado</div></div>
+</div>

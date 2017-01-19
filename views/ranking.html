@@ -1,0 +1,176 @@
+<div class="row bottom-0 ranking" style="margin:10px">
+	<div class="col s12" style="margin-bottom:20px">
+		<div class="title-top"><img src="http://www.gabinetecivil.al.gov.br/configuracoes/imagem/alagoas/Bandeira%20do%20Brasil.gif/image">Ranking Nacional</div>
+	</div>
+	<div class="col s12 m6 l4" style="margin-bottom:20px">
+		<div class="row bottom-0">
+			<div class="col s6">
+			<div class="subtitle-top">
+				  	<i class="fa fa-tint" style="color:#3f51b5"/>&ensp;Postos
+			  	</div>
+			</div>
+			<div class="col s6">
+				<select class="browser-default" ng-model="combustivel" ng-change="changeposto(combustivel)">
+					<option value="gasolina">Gasolina</option>
+					<option value="etanol">Etanol</option>
+					<option value="diesel">Diesel</option>
+					<option value="gnv">Gás Natural</option>
+					<option value="diesel s10">Diesel S10</option>
+				</select>
+			</div>
+		</div>
+		<div class="row bottom-0">
+			<div class="col s12" style="overflow-y: scroll;height:300px;">
+				<div class="collection">
+			        <a ng-repeat="posto in postos" href="posto/{{posto.hash}}" class="collection-item avatar">    	
+		      			<img src="{{posto.logo}}" class="circle">
+					    <span class="title">{{posto.razao}}</span>
+				    	<p>Preço: R${{posto.precovenda}}</p>
+			        </a>
+			    </div>
+	    	</div>
+	    </div>
+	</div>
+	<div class="col s12 m6 l4" style="margin-bottom:20px">
+		<div class="row bottom-0">
+			<div class="col s6">
+				<div class="subtitle-top">
+				  	<i class="fa fa-map-marker" style="color:#3f51b5"/>&ensp;Cidades
+			  	</div>
+			</div>
+			<div class="col s6">
+				<select class="browser-default" ng-model="combustivel1" ng-change="changecidade(combustivel1)">
+					<option value="gasolina">Gasolina</option>
+					<option value="etanol">Etanol</option>
+					<option value="diesel">Diesel</option>
+					<option value="gnv">Gás Natural</option>
+					<option value="diesel s10">Diesel S10</option>
+				</select>
+			</div>
+		</div>
+		<div class="row bottom-0">
+			<div class="col s12" style="overflow-y: scroll;height:300px;">
+				<div class="collection">
+			        <a ng-repeat="cidade in cidades" href="cidade/{{cidade.estadoabrev}}/{{cidade.cidade}}" class="collection-item avatar">    	
+		      			<img ng-if="cidade.bandeira" src="{{cidade.bandeira}}" class="circle">
+		      			<img ng-if="!cidade.bandeira" src="http://www.mbi.com.br/mbi/files/media/image/brasil-municipio/xx-ignorado-bandeira.jpg" class="circle">
+					    <span class="title">{{cidade.cidade}} - {{cidade.estadoabrev}}</span>
+				    	<p>Preço: R${{cidade.precomedio}}</p>
+			        </a>
+			    </div>
+	    	</div>
+	    </div>
+	</div>
+	<div class="col s12 m6 l4" style="margin-bottom:20px">
+		<div class="row bottom-0">
+			<div class="col s6">
+				<div class="subtitle-top">
+				  	<i class="fa fa-globe" style="color:#3f51b5"/>&ensp;Estados
+			  	</div>
+			</div>
+			<div class="col s6">
+				<select class="browser-default" ng-model="combustivel2" ng-change="changeestado(combustivel2)">
+					<option value="gasolina">Gasolina</option>
+					<option value="etanol">Etanol</option>
+					<option value="diesel">Diesel</option>
+					<option value="gnv">Gás Natural</option>
+					<option value="diesel s10">Diesel S10</option>
+				</select>
+			</div>
+		</div>
+		<div class="row bottom-0">
+			<div class="col s12" style="overflow-y: scroll;height:300px;">
+				<div class="collection">
+			        <a ng-repeat="estado in estados" href="estado/{{estado.estadoabrev}}" class="collection-item avatar">    	
+		      			<img src="{{estado.bandeira}}" class="circle">
+					    <span class="title">{{estado.estado}}</span>
+				    	<p>Preço: R${{estado.precomedio}}</p>
+			        </a>
+			    </div>
+	    	</div>
+	    </div>
+	</div>
+	<div class="col s12 m6 l4" style="margin-bottom:20px">
+		<div class="row bottom-0">
+			<div class="col s6">
+				<div class="subtitle-top">
+				  	<i class="fa fa-flag" style="color:#3f51b5"/>&ensp;Bandeiras
+			  	</div>
+			</div>
+			<div class="col s6">
+				<select class="browser-default" ng-model="combustivel3" ng-change="changebandeira(combustivel3)">
+					<option value="gasolina">Gasolina</option>
+					<option value="etanol">Etanol</option>
+					<option value="diesel">Diesel</option>
+					<option value="gnv">Gás Natural</option>
+					<option value="diesel s10">Diesel S10</option>
+				</select>
+			</div>
+		</div>
+		<div class="row bottom-0">
+			<div class="col s12" style="overflow-y: scroll;height:300px;">
+				<div class="collection">
+			        <a ng-repeat="bandeira in bandeiras" href="bandeira/{{bandeira.bandeira}}" class="collection-item avatar">
+		      			<img src="{{bandeira.logo}}" class="circle">
+					    <span class="title">{{bandeira.bandeira}}</span>
+				    	<p>Preço: R${{estado.preco}}</p>
+			        </a>
+			    </div>
+	    	</div>
+	    </div>
+	</div>
+	<div class="col s12 m6 l4" style="margin-bottom:20px">
+		<div class="row bottom-0">
+			<div class="col s6">
+				<div class="subtitle-top">
+				  	<i class="fa fa-car" style="color:#3f51b5"/>&ensp;Carros
+			  	</div>
+			</div>
+			<div class="col s6">
+				<select class="browser-default" ng-model="combustivel4" ng-change="changecarro(combustivel4)">
+					<option value="gasolina">Gasolina</option>
+					<option value="etanol">Etanol</option>
+					<option value="diesel">Diesel</option>
+				</select>
+			</div>
+		</div>
+		<div class="row bottom-0">
+			<div class="col s12" style="overflow-y: scroll;height:300px;">
+				<div class="collection">
+			        <a ng-repeat="carro in carros" href="carro/{{carro.modelo}}" class="collection-item avatar">
+		      			<img src="{{carro.logo}}" class="circle">
+					    <span class="title">{{carro.modelo}} - {{carro.marca}}</span>
+				    	<p>Consumo mínimo: {{carro.consumo}}km/l</p>
+			        </a>
+			    </div>
+	    	</div>
+	    </div>
+	</div>
+	<div class="col s12 m6 l4" style="margin-bottom:20px">
+		<div class="row bottom-0">
+			<div class="col s6">
+				<div class="subtitle-top">
+				  	<i class="fa fa-road" style="color:#3f51b5"/>&ensp;Marca
+			  	</div>
+			</div>
+			<div class="col s6">
+				<select class="browser-default" ng-model="combustivel5" ng-change="changemarca(combustivel5)">
+					<option value="gasolina">Gasolina</option>
+					<option value="etanol">Etanol</option>
+					<option value="diesel">Diesel</option>
+				</select>
+			</div>
+		</div>
+		<div class="row bottom-0">
+			<div class="col s12" style="overflow-y: scroll;height:300px;">
+				<div class="collection">
+			        <a ng-repeat="marca in marcas" href="marca/{{marca.marca}}" class="collection-item avatar">
+		      			<img src="{{marca.logo}}" class="circle">
+					    <span class="title">{{marca.marca}}</span>
+				    	<p>Consumo mínimo: {{marca.media}}km/l</p>
+			        </a>
+			    </div>
+	    	</div>
+	    </div>
+	</div>
+</div>

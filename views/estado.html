@@ -1,0 +1,93 @@
+<div class="row bottom-0" style="margin:10px">
+	<div class="col s12 m6">
+		<div class="title-top"><img src="{{estado.bandeira}}">{{estado.estado}}</div>
+	</div>
+	<div class="col s12 m6 precos">
+		<div class="row bottom-0">
+			<div class="col s6 m2" ng-repeat="preco in estado.precos">
+				<div class="preco">R$ {{preco.precomedio}}</div>
+				<div class="fuel">{{preco.combustivel}}</div>
+			</div>
+		</div>
+	</div>
+	<div class="col s12" style="margin-bottom:20px">
+		<div id="mapstate"></div>
+	</div>
+	<div class="col s12 estadocidade">
+		<div class="row bottom-0">
+			<div class="col s12">
+				<div class="subtitle-top">Bandeiras</div>
+			</div>
+			<div class="col s12">
+				<div class="row bottom-0" style="overflow-y: scroll;height:100px">
+					<div class="col s4 m2 l1" ng-repeat="bandeira in bandeiras">
+						<div class="card">
+						    <div class="card-image">
+						      <a href="bandeira/{{bandeira.bandeira}}"><img src="{{bandeira.logo}}"></a>
+						    </div>
+			  			</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="col s12 m6 ranking" style="margin-bottom:20px">
+		<div class="row bottom-0">
+			<div class="col s6">
+				<div class="subtitle-top">
+				  	Ranking dos Postos
+			  	</div>
+			</div>
+			<div class="col s6">
+				<select class="browser-default" ng-model="combustivel" ng-change="changeposto(combustivel)">
+					<option value="gasolina">Gasolina</option>
+					<option value="etanol">Etanol</option>
+					<option value="diesel">Diesel</option>
+					<option value="gnv">Gás Natural</option>
+					<option value="diesel s10">Diesel S10</option>
+				</select>
+			</div>
+		</div>
+		<div class="row bottom-0">
+			<div class="col s12" style="overflow-y: scroll;height:300px;">
+				<div class="collection">
+			        <a ng-repeat="posto in postos" href="posto/{{posto.hash}}" class="collection-item avatar">    	
+		      			<img src="{{posto.logo}}" class="circle">
+					    <span class="title">{{posto.razao}}</span>
+				    	<p>Preço: R${{posto.precovenda}}</p>
+			        </a>
+			    </div>
+	    	</div>
+	    </div>
+	</div>
+	<div class="col s12 m6 ranking" style="margin-bottom:20px">
+		<div class="row bottom-0">
+			<div class="col s6">
+				<div class="subtitle-top">
+				  	Ranking das Cidades
+			  	</div>
+			</div>
+			<div class="col s6">
+				<select class="browser-default" ng-model="combustivel1" ng-change="changecidade(combustivel1)">
+					<option value="gasolina">Gasolina</option>
+					<option value="etanol">Etanol</option>
+					<option value="diesel">Diesel</option>
+					<option value="gnv">Gás Natural</option>
+					<option value="diesel s10">Diesel S10</option>
+				</select>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col s12" style="overflow-y:scroll;height:300px;">
+				<div class="collection">
+			        <a ng-repeat="cidade in cidades" href="cidade/{{cidade.estadoabrev}}/{{cidade.cidade}}" class="collection-item avatar">    	
+		      			<img ng-if="cidade.bandeira" src="{{cidade.bandeira}}" class="circle">
+		      			<img ng-if="!cidade.bandeira" src="http://www.mbi.com.br/mbi/files/media/image/brasil-municipio/xx-ignorado-bandeira.jpg" class="circle">
+					    <span class="title">{{cidade.cidade}} - {{cidade.estadoabrev}}</span>
+				    	<p>Preço: R${{cidade.precomedio}}</p>
+			        </a>
+			    </div>
+	    	</div>
+	    </div>
+	</div>
+</div>

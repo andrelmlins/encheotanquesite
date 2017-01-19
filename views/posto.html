@@ -1,0 +1,52 @@
+<div class="row bottom-0" style="margin:10px;height:100%">
+	<div class="col s12 m8">
+		<div class="title-top">{{posto.razao}}</div>
+		<h5>{{posto.endereco}} - {{posto.bairro}}<br>{{posto.cidade}} - {{posto.estadoabrev}}</h5>
+	</div>
+	<div class="col s12 m4">
+		<div class="card" style="width:150px">
+			<a href="bandeira/{{posto.bandeira}}"><img src="{{posto.logo}}" width="150px"></a>
+		</div>
+	</div>
+	<div class="col s12" style="margin-bottom:10px;display:block;">
+		<div id="mapfuel"></div>
+		<div style="position:absolute">
+		    <a class="btn-floating btn-large indigo" ng-click="direction()">
+		    	<i class="fa fa-map-marker"></i>
+		    </a>
+		</div>
+	</div>
+	<div class="col s12 posto" style="margin-top:30px">
+		<div class="row bottom-0">
+			<div class="col s6 m2" ng-repeat="preco in posto.precos">
+				<div class="preco">R$ {{preco.preco}}</div>
+				<div class="combustivel">{{preco.combustivel}}</div>
+				<div class="data">{{preco.data}}</div>
+			</div>
+		</div>
+	</div>
+	<div class="col s12 m6" style="margin-top:30px">
+		<div class="subtitle-top" style="text-align:center;margin-bottom:15px"><img src="{{cidade.bandeira}}"> Média da Cidade: <a href="cidade/{{posto.estadoabrev}}/{{posto.cidade}}">{{posto.cidade}}</a></div>
+		<div class="row">
+			<div class="col s12">
+				<div class="row" ng-repeat="preco in cidade.precos">
+					<div class="col s12">
+						<span style="background:#3f51b5;padding:10px;color:white">R$ {{preco.precomedio}}</span> {{preco.combustivel}}
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="col s12 m6" style="margin-top:30px">
+		<div class="subtitle-top" style="text-align:center;margin-bottom:15px"><img src="{{estado.bandeira}}">Média do Estado: <a href="estado/{{posto.estadoabrev}}">{{posto.estado}}</a></div>
+		<div class="row bottom-0">
+			<div class="col s12">
+				<div class="row" ng-repeat="preco in estado.precos">
+					<div class="col s12">
+						<span style="background:#3f51b5;padding:10px;color:white">R$ {{preco.precomedio}}</span> {{preco.combustivel}}
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

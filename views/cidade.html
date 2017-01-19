@@ -1,0 +1,60 @@
+<div class="row bottom-0" style="margin:10px;height:100%">
+	<div class="col s12 m6">
+		<div class="title-top" ng-if="cidade.bandeira"><img src="{{cidade.bandeira}}">{{cidade.cidade}}</div>
+		<div class="title-top" ng-if="!cidade.bandeira"><img src="http://www.mbi.com.br/mbi/files/media/image/brasil-municipio/xx-ignorado-bandeira.jpg">{{cidade.cidade}}</div>
+	</div>
+	<div class="col s12 m6 precos">
+		<div class="row bottom-0">
+			<div class="col s6 m2" ng-repeat="preco in cidade.precos">
+				<div class="preco">R$ {{preco.precomedio}}</div>
+				<div class="fuel">{{preco.combustivel}}</div>
+			</div>
+		</div>
+	</div>
+	<div class="col s12" style="margin-bottom:20px">
+		<div id="mapcity"></div>
+	</div>
+	<div class="col s12">
+		<div class="row bottom-0">
+			<div class="col s12">
+				<div class="subtitle-top">Bandeiras</div>
+			</div>
+			<div class="col s3 m2 l1" ng-repeat="bandeira in bandeiras">
+				<div class="card">
+				    <div class="card-image">
+				      <a href="bandeira/{{bandeira.bandeira}}"><img src="{{bandeira.logo}}"></a>
+				    </div>
+	  			</div>
+			</div>
+		</div>
+	</div>
+	<div class="col s12 ranking" style="margin-bottom:20px">
+		<div class="row bottom-0">
+			<div class="col s6">
+				<div class="subtitle-top">
+				  	Ranking dos Postos
+			  	</div>
+			</div>
+			<div class="col s6">
+				<select class="browser-default" ng-model="combustivel" ng-change="changeposto(combustivel)">
+					<option value="gasolina">Gasolina</option>
+					<option value="etanol">Etanol</option>
+					<option value="diesel">Diesel</option>
+					<option value="gnv">Gás Natural</option>
+					<option value="diesel s10">Diesel S10</option>
+				</select>
+			</div>
+		</div>
+		<div class="row bottom-0">
+			<div class="col s12" style="overflow-y: scroll;height:300px;">
+				<div class="collection">
+			        <a ng-repeat="posto in postos" href="posto/{{posto.hash}}" class="collection-item avatar">    	
+		      			<img src="{{posto.logo}}" class="circle">
+					    <span class="title">{{posto.razao}}</span>
+				    	<p>Preço: R${{posto.precovenda}}</p>
+			        </a>
+			    </div>
+	    	</div>
+	    </div>
+	</div>
+</div>

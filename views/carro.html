@@ -1,0 +1,60 @@
+<div class="row bottom-0 carro" style="margin:10px;height:100%">
+	<div class="col s12">
+		<div class="title-top"><img src="{{carro.logo}}">{{carro.modelo}}</div>
+	</div>
+	<div class="col s12 m4" style="margin-bottom:20px">
+		<div class="subtitle-top">Dados Técnicos</div>
+		<b>Categoria:</b> {{carro.categoria}}<br>
+		<b>Versões:</b> <span ng-repeat="v in carro.versao">{{v}} </span><br>
+		<b>Quantidade de Modelos:</b> {{carro.quantidade}}
+	</div>
+	<div class="col s12 m4">
+		<div class="subtitle-top">Motor</div>
+		<div class="row">
+			<div class="col s4"  ng-repeat="moto in carro.motor">
+				<div class="motor">{{moto}}</div>
+			</div>
+		</div>
+	</div>
+	<div class="col s12 m6" ng-if="false">
+		<div class="subtitle-top">Consumo por combustível</div>
+		<div class="row">
+			<div class="col s12" ng-repeat="c in carro.combustivel" style="text-align:center">
+				<div ng-if="c=='F'">
+					<div class="consumo">{{carro.maiorconsumog}}<br>a<br> {{carro.menorconsumog}}km/l</div><br>Gasolina<br><br>
+					<div class="consumo">{{carro.maiorconsumoe}}<br>a<br>{{carro.menorconsumoe}}km/l</div><br>Etanol
+				</div>
+				<div ng-if="c=='G'">
+					<div class="consumo">{{carro.maiorconsumog}}<br>a<br> {{carro.menorconsumog}}km/l</div><br>Gasolina
+				</div>
+				<div ng-if="c=='D'">
+					<div class="consumo">{{carro.maiorconsumog}}<br>a<br>{{carro.menorconsumog}}km/l</div><br>Diesel
+				</div>
+				<div ng-if="c=='E'">
+					<div class="consumo">entre {{carro.maiorconsumoe}}<br>a<br>{{carro.menorconsumoe}}km/l</div><br>Etanol
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="col s12">
+		<div class="subtitle-top">Modelos</div>
+		<div class="row">
+			<div class="input-field col s12">
+		    	<input placeholder="buscar" ng-model="search" type="text">
+		    </div>
+			<div class="col s12" style="overflow-y: scroll;height:300px">
+				<ul class="collection">
+					<li class="collection-item" ng-if="fmodelos.length" ng-repeat="modelo in fmodelos = (modelos | filter:search)">
+						<span class="motora circle">{{modelo.motora}}</span>
+						<span class="title">{{modelo.modelo}} - {{modelo.versao}}</span>
+						<p>
+							Cambio: {{modelo.cambio}}<br>
+							Consumo: {{modelo.maiorconsumo}} a {{modelo.menorconsumo}}km/l
+						</p>
+					</li>
+			    </ul>
+			</div>
+		</div>
+		
+	</div>
+</div>

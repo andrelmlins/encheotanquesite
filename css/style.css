@@ -1,0 +1,435 @@
+body,html{
+	width: 100%;
+	height: 100%;
+	overflow: hidden;
+}
+
+::-webkit-scrollbar-track {
+    background-color: #F4F4F4;
+}
+::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+    background: #F4F4F4;
+}
+::-webkit-scrollbar-thumb {
+    background: #E65100;
+}
+
+a{
+	color:#E65100;
+}
+
+a:hover{
+	opacity: 0.5;
+}
+
+.container{
+	margin:0px;
+	padding:0px;
+	max-width: 100%;
+	min-width: 100%;
+	width: 100%;
+	height: 100%;
+}
+
+.orange{
+	background-color: #E65100 !important;
+}
+
+.orange-text{
+	color: #E65100;
+}
+
+.left{
+	margin:0px !important;
+	height:100%;
+	padding:0px !important;
+}
+
+.right{
+	margin:0px;
+	height:100%;
+	padding: 0px !important;
+	overflow-y: scroll;
+	scrollbar-face-color:pink;
+}
+
+.left img{
+	width:100%;
+	padding:12%;
+}
+
+.left .collection{
+	background: transparent;
+	border: 0px;
+	padding: 0px;
+}
+
+.left .collection .collection-item{
+	background: transparent;
+	border:0px;
+	color: white;
+	text-align: left;
+	font-size: 13pt;
+	padding: 10px 0px;
+	padding-right: 15px;
+	padding-left: 15px; 
+}
+
+.left .collection .collection-item .fa{
+	margin-right: 15px;
+}
+
+.left .collection a.collection-item:not(.active):hover{
+	background-color: rgba(0, 0, 0, 0.1);
+}
+
+@media only screen and (max-width: 992px) {
+	.left .collection .collection-item .fa{
+		width: 100%;
+		font-size:16pt;
+	}
+	.left .collection .collection-item{
+		text-align: center;
+	}
+
+	.left .collection .collection-item .nome{
+		display: none;
+	}
+}
+
+.navenche{
+	display: none;
+}
+
+@media only screen and (max-width: 600px) {
+	.left{
+		display: none;
+	}
+
+	.navenche{
+		display: block;
+	}
+} 
+
+#mapa{
+	width: 100%;
+	height: 100%;
+}
+
+#mapstate{
+	width: 100%;
+	height: 250px;
+}
+
+#mapcity{
+	width: 100%;
+	height: 250px;
+}
+
+#mapflag{
+	width: 100%;
+	height: 400px;
+}
+
+#mapfuel{
+	width: 100%;
+	height: 150px;
+	float:left;
+}
+
+.textshadow{
+	text-shadow: 1px 2px 1px rgba(0, 0, 0, 1);
+	font-family: arial;
+	font-weight: 700 !important;
+}
+
+.title-top{
+	width: 100%;
+	font-size: 35pt;
+	color: #E65100;
+	font-family: bebas;
+}
+
+.title-top img{
+	height: 38px;
+	margin-right: 20px;
+}
+
+.subtitle-top{
+	width: 100%;
+	font-size: 20pt;
+	color: #E65100;
+	font-family: bebas;
+}
+
+.subtitle-top img{
+	height: 18px;
+	margin-right: 20px;
+}
+
+.bottom-0{
+	margin-bottom: 0px;
+}
+
+.cidades .collection .collection-item{
+	padding-left: 92px;
+	min-height: 64px;
+}
+
+.cidades .collection .circle{
+	border-radius: 0px;
+	width: auto !important;
+}
+
+.logo-universe{
+	width: 8%;
+	position: fixed;
+	bottom: 10px;
+	left: 10px;
+}
+
+.precos{
+	margin-bottom: 10px;
+}
+
+.precos .preco{
+	color:white;
+	background: #3f51b5;
+	text-align: center;
+	padding: 10px;
+}
+
+.precos .fuel{
+	text-align: center;
+	font-size: 8pt;
+	margin-top: 5px;
+}
+
+.estadocidade .collection .collection-item{
+	min-height: 0px;
+	line-height: 8px;
+	color:black;
+	padding:10px;
+}
+
+.estadocidade .collection .collection-item h5{
+	margin: 0px;
+	margin-bottom: 10px;
+}
+
+.bandeiraposto .collection .collection-item{
+	min-height: 0px;
+	line-height: 8px;
+	color:black;
+	padding:10px;
+}
+
+.bandeiraposto .collection .collection-item h5{
+	margin: 0px;
+	margin-bottom: 10px;
+}
+
+.bandeiraposto .input-field{
+	margin: 0px;
+}
+
+.consumo{
+	margin: 10px 0px;
+}
+
+.consumo .card{
+	padding: 10px;
+}
+
+.consumo .motor{
+	background: #3f51b5;
+	text-align: center;
+	width: 70px;
+	height: 70px;
+	color:white;
+	border-radius: 70px;
+	line-height: 70px;
+	vertical-align: middle;
+	margin: auto auto;
+	font-size: 20pt;
+}
+
+.consumo .details{
+	text-align: center;
+	margin-top: 10px;
+	font-size: 10pt;
+}
+
+.marca .collection .collection-item{
+	min-height: 0px;
+	line-height: 8px;
+	color:black;
+	padding:10px;
+}
+
+.marca .collection .collection-item h5{
+	margin: 0px;
+	margin-bottom: 10px;
+}
+
+.marca .input-field{
+	margin: 0px;
+}
+
+.searchmap{
+	position: absolute;
+	left:40%;
+	top:30px;
+	width: 40%;
+	background: white;
+	padding: 12px;
+	border-radius:10px;
+}
+
+.searchmap input{
+	padding:0px;
+	margin:0px;
+	float:left;
+	width: 88%;
+	margin-right: 2%;
+	height: 2rem;
+}
+
+.searchmap .btn{
+	width: 10%;
+	padding: 0px;
+	margin: 0px;
+	box-shadow: none;
+}
+
+.posto .preco{
+	text-align: center;
+	background: #3f51b5;
+	color:white;
+	margin: auto auto;
+	width: 80px;
+	height: 80px;
+	line-height: 80px;
+	vertical-align: middle;
+}
+
+.posto .combustivel{
+	margin-top: 10px;
+	text-align: center;
+	font-size:18pt;
+	font-weight: bold;
+}
+
+.posto .data{
+	text-align: center;
+	font-size:10pt;
+}
+
+.carros .fa{
+	font-size: 15pt;
+	margin-right: 20px;
+	color:white;
+	background: #3f51b5;
+	padding: 18px;
+	border-radius: 50px;
+	vertical-align: middle;
+	margin-top:0px;
+}
+
+.carros .title{
+	color:black;
+	font-size: 18pt;
+	font-weight: bold;
+	margin-bottom:0px;
+	margin-top:0px;
+}
+
+.carros p{
+	margin-top: -20px;
+	margin-left: 80px;
+	margin-bottom: 0px;
+	color:black;
+}
+
+.carro .collection-item{
+
+}
+
+.carro .collection-item .motora{
+	font-size: 15pt;
+	margin-right: 20px;
+	color:white;
+	background: #3f51b5;
+	padding: 18px;
+	border-radius: 50px;
+	vertical-align: middle;
+	float:left;
+}
+
+.carro .collection-item .title{
+	font-weight: bold;
+	margin-bottom: 0px;
+}
+
+.carro .collection-item p{
+	margin-left:80px;
+	line-height: 15px;
+	margin-top: 0px;
+	margin-bottom: 8px;
+}
+
+.carro .motor{
+	background: #3f51b5;
+	text-align: center;
+	width: 70px;
+	height: 70px;
+	color:white;
+	border-radius: 70px;
+	line-height: 70px;
+	vertical-align: middle;
+	margin: auto auto;
+	font-size: 20pt;
+}
+
+.carro .consumo{
+	background: #3f51b5;
+	color:white;
+	padding: 10px;
+}
+
+.browser-default{
+	height: 30px;
+	border:none;
+	float:right;
+	color: #E65100;
+	border-bottom: 2px solid #E65100;
+}
+
+.browser-default option{
+	color:black;
+}
+
+.browser-default:focus{
+	outline: none;
+}
+
+.ranking .collection{
+	border:none;
+}
+
+.ranking .collection .collection-item{
+	min-height: auto;
+	color:black;
+}
+
+.ranking .collection .collection-item p{
+	margin-bottom: 0px;
+}
+
+.ranking .collection .collection-item .circle{
+	border-radius:0px;
+	height: auto;
+	padding: 3px;
+	box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);;
